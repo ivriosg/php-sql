@@ -1,0 +1,68 @@
+# Archivos ocultos de Finder
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archivos temporales de recursos (thumbnail y metadata)
+._*
+Icon?
+.Spotlight-V100
+.Trashes
+.fseventsd
+.metadata_never_index
+
+# Archivos de Time Machine
+.TemporaryItems
+.TemporaryFile
+.apdisk
+
+# Archivos creados por macOS al montar volúmenes externos
+.VolumeIcon.icns
+
+# ============================
+# 🧰 PHP / IDE / TEMPORALES
+# ============================
+
+# Cache y logs
+*.log
+*.cache
+*.tmp
+
+# Configuraciones de servidor local
+.env
+.env.local
+.env.*.local
+
+# Carpeta de sesiones temporales o cachés
+/sessions/
+/cache/
+/tmp/
+
+# Archivos de base de datos locales o SQLite
+*.sqlite
+*.sqlite3
+
+# Archivos de instalación o banderas
+.installed
+install.php
+
+# Archivos de subida y backups
+/uploads/
+/backups/
+
+# ============================
+# 🧠 EDITORES / IDEs
+# ============================
+
+# Visual Studio Code
+.vscode/
+
+# PhpStorm / JetBrains
+.idea/
+
+# Otros
+*.swp
+*.swo
+*.bak
+*.old
+/sql/
