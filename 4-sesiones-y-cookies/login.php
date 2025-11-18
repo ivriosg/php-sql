@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!doctype html>
-<html lang="es">
+<html lang="es_MX">
 
 <head>
   <meta charset="utf-8">

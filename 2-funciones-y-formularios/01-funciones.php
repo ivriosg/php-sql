@@ -226,7 +226,7 @@ if ($accion === 'analizar' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="number" name="precio" step="0.01" min="0" placeholder="ej. 1000" value="<?php echo limpiar($_POST['precio'] ?? ''); ?>">
       </label>
       <label>Porcentaje de descuento:
-        <input type="number" name="porcentaje" step="0.01" min="0" placeholder="ej. 15" value="<?php echo limpiar($_POST['porcentaje'] ?? ''); ?>">
+        <input type="number" name="porcentaje" step="0.01" min="0" max="10" placeholder="ej. 15" value="<?php echo limpiar($_POST['porcentaje'] ?? ''); ?>">
       </label>
       <button type="submit">Calcular (POST)</button>
       <p><small class="code">Usa método POST para no exponer valores sensibles en la URL.</small></p>

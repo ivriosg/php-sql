@@ -4,7 +4,7 @@ require_login();
 $u = $_SESSION['usuario'];
 ?>
 <!doctype html>
-<html lang="es">
+<html lang="es_MX">
 
 <head>
   <meta charset="utf-8">

@@ -2,6 +2,7 @@
 $errores = [];
 $nombre = '';
 $email = '';
+$telefono = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $nombre = trim($_POST['nombre'] ?? '');
@@ -12,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="es-419">
 
 <head>
   <meta charset="utf-8">

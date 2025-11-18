@@ -3,8 +3,11 @@ $usuarios = [
   ['id' => 1, 'nombre' => 'Ana', 'email' => 'ana@example.com'],
   ['id' => 2, 'nombre' => 'Luis', 'email' => 'luis@example.com'],
   ['id' => 3, 'nombre' => 'María', 'email' => 'maria@example.com'],
-  ['id' => 4, 'nombre' => 'Ivan<script>console.log("Hola desde la consola")</script>', 'email' => 'ivan@example.com'],
+  ['id' => 4, 'nombre' => 'Ivan<script>alert("Hola desde la consola")</script>', 'email' => 'ivan@example.com'],
 ];
+
+
+var_dump($usuarios);
 
 $buscar = trim($_GET['buscarDatos'] ?? '');
 if ($buscar !== '') {

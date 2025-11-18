@@ -2,22 +2,27 @@
 
 declare(strict_types=1);
 
-// 🧩 Función 1: Suma dos números
-function sumar(int $a, int $b): int
+// 🧩 Función 1: Suma tres números
+function sumar(int $a, int $b, int $c): int
 {
-  return $a + $b;
+  return $a + $b + $c;
 }
 
 // 🧩 Función 2: Convierte texto a mayúsculas
 function convertir_mayusculas(string $texto): string
 {
-  return strtoupper($texto);
+
+  $utf8 = mb_strtoupper($texto, 'utf-8');
+  $noutf8 = strtoupper($texto);
+  // mb_strtoupper permite acentos
+  // strtoupper no permite el utf-8 y marca error
+  return $utf8 . " <br><h2>Este es la función sin UTF-8</h2><br> " . $noutf8;
 }
 
 // 🧩 Función 3: Verifica si una persona es mayor de edad
 function es_mayor_de_edad(int $edad): string
 {
-  return ($edad >= 18) ? "Sí, es mayor de edad ✅" : "No, es menor de edad ❌";
+  return ($edad >= 18) ? '<p class="pass">Sí, es mayor de edad ✅</p>' : '<p class="alert">No, es menor de edad ❌</p>';
 }
 
 // Valor por defecto
@@ -30,7 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($accion === 'suma') {
     $a = (int)($_POST['a'] ?? 0);
     $b = (int)($_POST['b'] ?? 0);
-    $resultado = sumar($a, $b);
+    $c = (int)($_POST['c'] ?? 0);
+    $resultado = sumar($a, $b, $c);
   }
 
   if ($accion === 'mayusculas') {
@@ -84,6 +90,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       border: 0;
       border-radius: .25rem;
     }
+    .alert {
+      background: red;
+      color: #fff;
+      padding: 1rem 2rem;
+    }
+    .pass {
+      background: greenyellow;
+      color: #000;
+      padding: 1rem 2rem;
+    }
   </style>
 </head>
 
@@ -111,6 +127,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </label>
       <label>Segundo número:
         <input type="number" name="b" required>
+      </label>
+      <label>Tercer número:
+        <input type="number" name="c" required>
       </label>
 
     <?php elseif ($accion === 'mayusculas'): ?>

@@ -1,6 +1,6 @@
 <?php
-$nombre = $_GET['nombre'] ?? null;
-$edad = isset($_GET['edad']) ? (int)$_GET['edad'] : null;
+  $nombre = $_GET['nombre'] ?? null;
+  $edad = isset($_GET['edad']) ? (int)$_GET['edad'] : null;
 ?>
 <!doctype html>
 <html lang="en">

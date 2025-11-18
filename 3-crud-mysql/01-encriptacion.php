@@ -1,8 +1,5 @@
 <?php
-
-declare(strict_types=1);
-
-// Función para escapar HTML
+// Función para escapar HTML / limpiar caracteres especiales <> '' . á 
 function esc(string $v): string
 {
   return htmlspecialchars($v, ENT_QUOTES, 'UTF-8');
@@ -23,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hmac = hash_hmac('sha256', $texto, $demoKey);
     $claveBin = hash('sha256', $demoKey, true);
     $ivLen    = openssl_cipher_iv_length('aes-256-cbc');
-    $iv       = random_bytes($ivLen);
+    $iv       = random_bytes($ivLen);  
     $cipherRaw = openssl_encrypt(
       $texto,
       'aes-256-cbc',

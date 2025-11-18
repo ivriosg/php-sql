@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($datos)) {
     foreach ($datos as $dato => $single) {
       if (trim($single) === '') {
-        echo ucfirst($dato) . " está vacío o nulo.<br>";
+        echo $dato . " está vacío o nulo.<br>";
       }
     }
   }
