@@ -23,10 +23,10 @@ if (!isset($_SESSION['vSESS'])) {
 
 <body>
   <!-- Header -->
-   <header>
+  <header>
     <a href="cerrar.php">Cerrar Sesión</a>
 
-   </header>
+  </header>
 
   <!-- Main -->
   <main>
