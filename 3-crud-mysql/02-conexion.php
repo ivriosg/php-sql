@@ -1,11 +1,10 @@
 <?php
-declare(strict_types=1);
-$dsn = 'mysql:host=localhost;dbname=php_curso;charset=utf8mb4';
-$user = 'root';
-$pass = 'root';
+$conexion = 'mysql:host=localhost;dbname=php_clasePHPcurso;charset=utf8mb4';
+$userDB = 'clasePHP';
+$passDB = 'OGH-14YgQ!lTMCM5';
 
 try {
-  $pdo = new PDO($dsn, $user, $pass, [
+  $pdo = new PDO($conexion, $userDB, $passDB, [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
   ]);

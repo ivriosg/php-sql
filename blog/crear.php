@@ -4,6 +4,12 @@ if (!isset($_SESSION['vSESS'])) {
   header('Location: index.php');
   exit();
 }
+include_once 'functions/database.php';
+
+// Obtener el email del usuario con la ID de usuario = 1
+$buscarUSR = $pdo->prepare("SELECT id, email FROM registros WHERE id = :id");
+$buscarUSR->execute([':id' => $_SESSION['vSESS']]);
+$resultado = $buscarUSR->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="es_MX">
@@ -25,7 +31,6 @@ if (!isset($_SESSION['vSESS'])) {
   <!-- Header -->
   <header>
     <a href="cerrar.php">Cerrar Sesión</a>
-
   </header>
 
   <!-- Main -->

@@ -2,6 +2,8 @@
 <?php
 session_start();
 
+include_once 'functions/database.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $titulo = trim($_POST['titulo'] ?? '');
   $contenido = trim($_POST['contenido']);
@@ -26,6 +28,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $altFlag = substr($altFlag, 0, -3);
 
   $url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]/";
+
+  // Guardamos la información en la BD
+  $guardarART = $pdo->prepare("INSERT INTO articulos(id_autor,titulo,contenido,metadescription,keywords,imagen,idioma_principal,idioma_alt) 
+                               VALUES(?,?,?,?,?,?,?,?)");
+  $guardarART->execute([$_SESSION['vSESS'], $titulo, $contenido, $description, $keywords, $imagen, $mainFlag, $altFlag]);
+
 ?>
   <html lang="<?php echo $mainLang; ?>">
 
